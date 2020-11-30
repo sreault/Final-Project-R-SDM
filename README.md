@@ -1,6 +1,6 @@
-<font size = "16">**Guinea Pig SDM**</font>
+# **Guinea Pig SDM**
 
-Author: Shannon Reault
+## Author: Shannon Reault
 
 Date: 11/24/2020
 
