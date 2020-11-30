@@ -1,16 +1,13 @@
 **Guinea Pig SDM**
 
-author: Shannon Reault
+Author: Shannon Reault
 
-date: "11/24/2020"
+Date: "11/24/2020"
 
 R Studio: 1.1.463
 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 This tutorial teaches the user how to create a Species Distribution Model in R Studio. This methodology can be used for any species- I demonstrate the workflow for guinea pig species distribution. This tutorial is based on techniques presented in the following resources:
 https://www.rpubs.com/kerkhoffa/SDMMaxent
 
@@ -81,16 +78,27 @@ futureEnv=getData('CMIP5', var='bio', res=2.5, rcp=85, model='HE', year=50)
 names(futureEnv)=names(currentEnv) #same names
 ```
 Many environmental variables are included in this dataset. We will use the following:
+
 BIO1 = Annual Mean Temperature
+
 BIO5 = Max Temperature of Warmest Month
+
 BIO6 = Min Temperature of Coldest Month
+
 BIO7 = Temperature Annual Range (BIO5-BIO6)
+
 BIO8 = Mean Temperature of Wettest Quarter
+
 BIO9 = Mean Temperature of Driest Quarter
+
 BIO12 = Annual Precipitation
+
 BIO16 = Precipitation of Wettest Quarter
+
 BIO17 = Precipitation of Driest Quarter
+
 BIO18 = Precipitation of Warmest Quarter
+
 BIO19 = Precipitation of Coldest Quarter
 
 Therefore, we must specify which variables to exclude from the analysis:
