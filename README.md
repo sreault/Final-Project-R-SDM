@@ -1,13 +1,11 @@
-# Final-Project-R-SDM
+**Guinea Pig SDM**
 
----
-title: "Guinea Pig SDM"
-
-author: "Shannon Reault"
+author: Shannon Reault
 
 date: "11/24/2020"
 
-output: html_document
+R Studio: 1.1.463
+
 ---
 
 ```{r setup, include=FALSE}
