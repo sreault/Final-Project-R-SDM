@@ -1,8 +1,8 @@
-**Guinea Pig SDM**
+<font size = "16">**Guinea Pig SDM**</font>
 
 Author: Shannon Reault
 
-Date: "11/24/2020"
+Date: 11/24/2020
 
 R Studio: 1.1.463
 
