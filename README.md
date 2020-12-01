@@ -42,6 +42,7 @@ data("wrld_simpl") #get border data from rgeos
 plot(wrld_simpl) #plot the border
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "red") #plot the points
 ```
+![](images/map1.png)
 
 It looks good, but we need to make sure all the points are valid. First, we will exclude any observations without lat/long data:
 
