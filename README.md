@@ -147,13 +147,8 @@ plot(guinea_df.me)
 
 Based on this plot, we can see that the model responds the most to variation in:
 
-Bio 16: Precipitation of Wettest Quarter
-
-Bio6- Minumum Temperature of the Coldest Month
-
-Bio19- Precipitation of Coldest Quarter
-
-Bio 17: Precipitation of Driest Quarter
+Bio 16: Precipitation of Wettest Quarter\
+Bio6- Minumum Temperature of the Coldest Month\
 
 How does the likelihood of species occurrence respond to variation in these climatic conditions?
 We can look at the shape of the response curves from the model with the response() function.
@@ -164,13 +159,8 @@ response(guinea_df.me)
 
 In these plots, a flat line represents no response to change in a variable, an increasing line represents a positive response, and a decreasing line represents a negative response. 
 
-Bio 16 (Precipitation of Wettest Quarter): Species are more likely to occur when there is low precipitation in the wettest quarter of the year.
-
-Bio6 (Minumum Temperature of the Coldest Month): Species occurrences increase very slightly when temperatures are mid-range in cold months.
-
-Bio19 (Precipitation of Coldest Quarter): Species occurrences decrease with more precipitation in the coldest quarter of the year.
-
-Bio 17 (Precipitation of Driest Quarter): Species are more likely to occur when there is the lowest possibile precipitation in the driest quarter of the year.
+Bio 16 (Precipitation of Wettest Quarter): Species are more likely to occur when there is low precipitation in the wettest quarter of the year.\
+Bio6 (Minumum Temperature of the Coldest Month): Species occurrences increase very slightly when temperatures are mid-range in cold months.\
 
 To see how model predicts the distribution of favorable habitat we have to generate predicted values for the cells in our region:
 ```{r, echo=T}
