@@ -148,10 +148,10 @@ plot(guinea_df.me)
 ![](images/map5.png)
 
 Based on this plot, we can see that the model responds the most to variation in:
-Bio19- Precipitation of Coldest Quarter
-Bio9- Mean Temperature of Driest Quarter
+Bio 16: Precipitation of Wettest Quarter
 Bio6- Minumum Temperature of the Coldest Month
-Bio18- Precipitation of the Warmest Quarter
+Bio19- Precipitation of Coldest Quarter
+Bio 17: Precipitation of Driest Quarter
 
 How does the likelihood of species occurrence respond to variation in these climatic conditions?
 We can look at the shape of the response curves from the model with the response() function.
@@ -161,10 +161,14 @@ response(guinea_df.me)
 ![](images/map6.png)
 
 In these plots, a flat line represents no response to change in a variable, an increasing line represents a positive response, and a decreasing line represents a negative response. 
-Bio19 (Precipitation of Coldest Quarter): occurrences decrease with more precipitation in cold weather
-Bio9 (Mean Temperature of Driest Quarter): occurrences favor mid-range temperatures in dry weather
-Bio6 (Minumum Temperature of the Coldest Month): occurrences increase when temperatures are mid-range in cold months
-Bio18 (Precipitation of the Warmest Quarter): occurences are higher when there is less precipitation in warm months. 
+
+Bio 16 (Precipitation of Wettest Quarter): Species are more likely to occur when there is low precipitation in the wettest quarter of the year.
+
+Bio6 (Minumum Temperature of the Coldest Month): Species occurrences increase very slightly when temperatures are mid-range in cold months.
+
+Bio19 (Precipitation of Coldest Quarter): Species occurrences decrease with more precipitation in the coldest quarter of the year.
+
+Bio 17 (Precipitation of Driest Quarter): Species are more likely to occur when there is the lowest possibile precipitation in the driest quarter of the year.
 
 To see how model predicts the distribution of favorable habitat we have to generate predicted values for the cells in our region:
 ```{r, echo=T}
@@ -189,7 +193,7 @@ plot(eval1, 'ROC')
 ```
 ![](images/map8.png)
 
-On this plot, the 1:1 line represents AUC= 0.5, which would be randsom guessing. Therefore, our model does better than a random guess, but we must still analyze these results with caution becuase we are not using real absence data, and the AUC score is only moderate. 
+On this plot, the 1:1 line represents AUC= 0.5, which would be randsom guessing. Therefore, our model does better than a random guess, but we must still analyze these results with caution becuase we are not using real absence data. 
 
 Now that we have validated the model, we can use it to project how potential habitat could shift under climate change conditions. We will use the 2050 climate estimates based on RCP 8.5
 ```{r, echo=T}
