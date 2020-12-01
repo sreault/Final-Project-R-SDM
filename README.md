@@ -59,6 +59,7 @@ Ok, now let's take another look at the data:
 plot(wrld_simpl, xlim = c(min(guinea_points$decimalLongitude)-1, max(guinea_points$decimalLongitude)+1), ylim = c(min(guinea_points$decimalLatitude)-1, max(guinea_points$decimalLatitude)+1), axes = T, col = "light yellow")
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blue", pch = 20, cex=.75)
 ```
+![](images/map2.png)
 
 Most wild guinea pig populations are located in South America, however there are not enough obserations in that region for our analysis. Therefore, our study area will include South America and the United States:
 ```{r, echo=T}
@@ -69,6 +70,7 @@ Let's take a look at the species observations in South America with a higher res
 map('worldHires', xlim = c(min(guinea_points$decimalLongitude)-1, max(guinea_points$decimalLongitude)+1), ylim = c(min(guinea_points$decimalLatitude)-1, max(guinea_points$decimalLatitude)+1), fill = T, col = "light yellow")
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blue", pch = 20, cex=.75)
 ```
+![](images/map3.png)
 
 We will specify the extent of our study area later, but before we do that, let's get the climate data from the Worldclim project (http://worldclim.org, Hijmans et al. 2005). This data will provide our bioclimatic variables:
 ```{r, echo=T}
