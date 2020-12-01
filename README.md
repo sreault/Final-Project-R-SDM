@@ -82,10 +82,8 @@ names(futureEnv)=names(currentEnv) #same names
 ```
 Many environmental variables are included in this dataset. We will use the following:
 
-BIO1 = Annual Mean Temperature
-
-BIO5 = Max Temperature of Warmest Month
-
+BIO1 = Annual Mean Temperature\
+BIO5 = Max Temperature of Warmest Month\
 BIO6 = Min Temperature of Coldest Month
 
 BIO7 = Temperature Annual Range (BIO5-BIO6)
