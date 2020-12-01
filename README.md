@@ -123,6 +123,7 @@ plot(modelEnv[["bio1"]]/10, main="Annual Mean Temperature")
 map('worldHires', ylim = c(min(guinea_points$decimalLatitude)-10,max(guinea_points$decimalLatitude)+10), xlim = c(min(guinea_points$decimalLongitude)-10,max(guinea_points$decimalLongitude)+10), fill = F, add = T)
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blue", pch = 20, cex=.75)
 ```
+![](images/map4.png)
 
 Before constructig the SDM, we need to assess how well the model predicts where wild guinea pigs would be found using cross-validation. We will use some of our species occurrences to test the model (20%), and the others to construct it (80%, training data):
 ```{r, echo=T}
@@ -144,6 +145,7 @@ We can plot this to relative improtance of climatic predictors:
 ```{r, echo=T}
 plot(guinea_df.me)
 ```
+![](images/map5.png)
 
 Based on this plot, we can see that the model responds the most to variation in:
 Bio19- Precipitation of Coldest Quarter
@@ -156,6 +158,7 @@ We can look at the shape of the response curves from the model with the response
 ```{r, echo=T}
 response(guinea_df.me)
 ```
+![](images/map6.png)
 
 In these plots, a flat line represents no response to change in a variable, an increasing line represents a positive response, and a decreasing line represents a negative response. 
 Bio19 (Precipitation of Coldest Quarter): occurrences decrease with more precipitation in cold weather
@@ -173,6 +176,7 @@ plot(guinea.pred, main = "Predicted Guinea Pig Suitability")
 map('worldHires', fill = F, add = T)
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, pch = 20, cex =.7)
 ```
+![](images/map7.png)
 
 Habitat is predicted to be suitable where species occurrences are, which makes sense because these data points were used to fit the model. 
 
@@ -183,6 +187,7 @@ ps_abs<- randomPoints(modelEnv, 1000)#generate pseudoabsences
 eval1<- evaluate(guinea_df.me, p = guinea_test, a = ps_abs, x = modelEnv)
 plot(eval1, 'ROC')
 ```
+![](images/map8.png)
 
 On this plot, the 1:1 line represents AUC= 0.5, which would be randsom guessing. Therefore, our model does better than a random guess, but we must still analyze these results with caution becuase we are not using real absence data, and the AUC score is only moderate. 
 
@@ -194,6 +199,7 @@ plot(guinea.2050, main = 'Predicted Guinea Pig Suitability in 2050')
 map('worldHires', fill = F, add = T)
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, pch = 20, cex =.7)
 ```
+![](images/map9.png)
 
 Next, we can analyze the difference between the current suitable habitat and future suitable habitat scenarios:
 ```{r, echo=T}
@@ -202,6 +208,7 @@ plot(guinea.change, main = "Predicted Change in Guinea Pig Suitability")
 map('worldHires', fill = F, add = T)
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, pch = 20, cex =.7)
 ```
+![](images/map10.png)
 
 In this map, values above zero indicate an increase is habitat suitability, and values belw zero indicate a decrease in habitat suitability. Therefore, our study area presents a decent amount of increasing suitability for guinea pigs, with smaller regions of slight decrease. 
 
