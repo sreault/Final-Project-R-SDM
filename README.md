@@ -148,9 +148,13 @@ plot(guinea_df.me)
 ![](images/map5.png)
 
 Based on this plot, we can see that the model responds the most to variation in:
+
 Bio 16: Precipitation of Wettest Quarter
+
 Bio6- Minumum Temperature of the Coldest Month
+
 Bio19- Precipitation of Coldest Quarter
+
 Bio 17: Precipitation of Driest Quarter
 
 How does the likelihood of species occurrence respond to variation in these climatic conditions?
