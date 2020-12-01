@@ -197,5 +197,5 @@ In this map, values above zero indicate an increase is habitat suitability, and 
 
 And that's all! I hope you enjoyed this tutorial :)
 
-This project's inspiration:\
+This project's inspiration, Gibbs:\
 ![](images/gibbs_proj.PNG)
