@@ -19,7 +19,7 @@ https://biodiversityinformatics.amnh.org/open_source/maxent/ \
 
 Make sure that the maxent.jar file is in the java folder within the dismo package folder. My file was not in that folder, and when I tried to run maxent, I recived an error that said the file was missing. If this happens, follow the file path in the error and place maxent.jar there. 
 
-Before we begin, identify your source for species occurence data. I downloaded species occurrence data from the Global Biodiversity Information Facility. I highly recommend this resource, which provides over 50,000 biodiversity datasets for free download. Use the link below to see if GBIF has occurrence data for your species:/
+Before we begin, identify your source for species occurence data. I downloaded species occurrence data from the Global Biodiversity Information Facility. I highly recommend this resource, which provides over 50,000 biodiversity datasets for free download. Use the link below to see if GBIF has occurrence data for your species:\
 https://www.gbif.org/
 
 Ok, let's get started!
