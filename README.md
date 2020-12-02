@@ -8,15 +8,19 @@ R Studio: 1.1.463
 
 ---
 
-This tutorial teaches the user how to create a Species Distribution Model in R Studio. This methodology can be used for any species- I demonstrate the workflow for guinea pig species distribution. This tutorial is based on techniques presented in the following resources:
+This tutorial teaches the user how to create a Species Distribution Model in R Studio. Species distribution models are tools that combine observations of species occurences with environmental variables to predict suitable habitat rannge (Elith & Leathwick 2009). The application and complexity of SDMs varies based on selected variables, scale, and extrapolation (Elith & Leathwick 2009). For the pyrposes of this R Studio tutorial, our model will be fairly simple. R Studio is a good resource for constructing SDMs, as the dismo package allows for ghe use of open source climate data to determine the environment favorable for a given species (Yoder 2013). This methodology can be used for any species- I demonstrate the workflow for guinea pig species distribution. This tutorial is based on techniques presented in the following resources:\
 https://www.rpubs.com/kerkhoffa/SDMMaxent
 
 https://www.youtube.com/watch?v=1C1zVJO-Rk0&t=232s
 
-This tutorial utilizes the maxent package, which can be downloaded here:
-https://biodiversityinformatics.amnh.org/open_source/maxent/
+This tutorial utilizes the maxent package, which can be downloaded here from the site below. This model uses environmental grids and occurrence data to portray a probability distribution of suitability for the chosen species (Phillips 2020). In this tutorial, maxent is utilized to predict habitat suitability in a current scenario, as well as a future scenario (2070).
+https://biodiversityinformatics.amnh.org/open_source/maxent/ \
+
 
 Make sure that the maxent.jar file is in the java folder within the dismo package folder. My file was not in that folder, and when I tried to run maxent, I recived an error that said the file was missing. If this happens, follow the file path in the error and place maxent.jar there. 
+
+Before we begin, identify your source for species occurence data. I downloaded species occurrence data from the Global Biodiversity Information Facility. I highly recommend this resource, which provides over 50,000 biodiversity datasets for free download. Use the link below to see if GBIF has occurrence data for your species:/
+https://www.gbif.org/
 
 Ok, let's get started!
 
@@ -207,3 +211,15 @@ In this map, values above zero indicate an increase is habitat suitability, and 
 And that's all! I hope you enjoyed this tutorial :)
 
 ![](images/gibbs_proj.png)
+
+Sources:
+
+Elith, J. & Leathwick, J. "Species Distribution Models: Ecological Explanation ad Prediction Across Space and Time" *Annual Review of Ecology, Evolution, and Systematics*, vol. 40, pp. 677-697. 2009. https://doi.org/10.1146/annurev.ecolsys.110308.120159.
+
+Steven J. Phillips, Miroslav Dudík, Robert E. Schapire. [Internet] Maxent software for modeling species niches and distributions (Version 3.4.1). Available from url: http://biodiversityinformatics.amnh.org/open_source/maxent/. Accessed on 2020-12-2.
+
+Yoder, J. "Species distribution models in R". *The Molecular Ecologist*. 2013. https://www.molecularecologist.com/2013/04/species-distribution-models-in-r/. 
+
+
+
+
