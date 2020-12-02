@@ -206,7 +206,7 @@ points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, pch = 20, 
 ```
 ![](images/map10.png)
 
-In this map, values above zero indicate an increase is habitat suitability, and values belw zero indicate a decrease in habitat suitability. Therefore, our study area presents a decent amount of increasing suitability for guinea pigs, with smaller regions of slight decrease. 
+In this map, values above zero indicate an increase is habitat suitability, and values belw zero indicate a decrease in habitat suitability. Therefore, our study area presents some increasing suitability for guinea pigs, with smaller regions of slight decrease. Generally, it appears that the suitability will remain stable.
 
 And that's all! I hope you enjoyed this tutorial :)
 
