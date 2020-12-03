@@ -69,7 +69,7 @@ This looks good, but we should itendtify a more specific study area. Most wild g
 ```{r, echo=T}
 guinea_points<- guinea_points[guinea_points$decimalLongitude > -135 & guinea_points$decimalLongitude< -50 & guinea_points$decimalLatitude> -60 & guinea_points$decimalLatitude< 40, ]
 ```
-Let's take a look at the species observations in South America and the Unuted States with a higher resolution map from the map library:
+Let's take a look at the species observations in South America and the United States with a higher resolution map from the map library:
 ```{r, echo=T}
 map('worldHires', xlim = c(min(guinea_points$decimalLongitude)-1, max(guinea_points$decimalLongitude)+1), ylim = c(min(guinea_points$decimalLatitude)-1, max(guinea_points$decimalLatitude)+1), fill = T, col = "light yellow")
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blue", pch = 20, cex=.75)
@@ -103,7 +103,7 @@ Therefore, we must specify which variables to exclude from the analysis:
 currentEnv=dropLayer(currentEnv, c("bio2", "bio3", "bio4", "bio10", "bio11", "bio13", "bio14", "bio15")) #drop layers from current scenario
 futureEnv=dropLayer(futureEnv, c("bio2", "bio3", "bio4", "bio10", "bio11", "bio13", "bio14", "bio15")) #drop layers from future scenario
 ```
-Now, we have to define a suitable range for guinea pigs. For the purposes of this simple SDM, we define a 10-degree buffer around each of these ranges. We will also clip the climate rasters to this extent. 
+Now, we have to define a suitable range for guinea pigs. For the purposes of this simple SDM, we define a 10-degree buffer around the study area we previously specified. We will also clip the climate rasters to this extent. 
 ```{r, echo=T}
 #define the extent based in guinea points +/- 10 degrees
 model.extent<-extent(min(guinea_points$decimalLongitude)-10,max(guinea_points$decimalLongitude)+10,min(guinea_points$decimalLatitude)-10,max(guinea_points$decimalLatitude)+10)
@@ -119,7 +119,7 @@ points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blu
 ```
 ![](images/map4.png)
 
-Before constructig the SDM, we need to assess how well the model predicts where wild guinea pigs would be found using cross-validation. We will use some of our species occurrences to test the model (20%), and the others to construct it (80%, training data):
+Before constructig the SDM, we need to assess how well the model actually predicts where wild guinea pigs would be found- this is done using a simple cross-validation analysis (aka k-fold cross validation). We will use some of our species occurrences to test the model (20%), and the others to construct it (80%, training data):
 ```{r, echo=T}
 #first we need to put the occurrence data in a dataframe
 guinea_lat = list(guinea_points$decimalLatitude) #create lat list
