@@ -65,11 +65,11 @@ points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blu
 ```
 ![](images/map2.png)
 
-Most wild guinea pig populations are located in South America, however there are not enough obserations in that region for our analysis. Therefore, our study area will include South America and the United States:
+This looks good, but we should itendtify a more specific study area. Most wild guinea pig populations are located in South America, however there are not enough obserations in that region for our analysis. Therefore, our study area will include South America and the United States:
 ```{r, echo=T}
 guinea_points<- guinea_points[guinea_points$decimalLongitude > -135 & guinea_points$decimalLongitude< -50 & guinea_points$decimalLatitude> -60 & guinea_points$decimalLatitude< 40, ]
 ```
-Let's take a look at the species observations in South America with a higher resolution map from the map library:
+Let's take a look at the species observations in South America and the Unuted States with a higher resolution map from the map library:
 ```{r, echo=T}
 map('worldHires', xlim = c(min(guinea_points$decimalLongitude)-1, max(guinea_points$decimalLongitude)+1), ylim = c(min(guinea_points$decimalLatitude)-1, max(guinea_points$decimalLatitude)+1), fill = T, col = "light yellow")
 points(guinea_points$decimalLongitude, guinea_points$decimalLatitude, col = "blue", pch = 20, cex=.75)
